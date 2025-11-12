@@ -1,0 +1,466 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --success-color: #27ae60;
+    --background-color: #ecf0f1;
+    --text-color: #333;
+    --light-gray: #bdc3c7;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header .subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Section Styles */
+section {
+    background: var(--white);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+section h3 {
+    color: var(--secondary-color);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+section h4 {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Intro Section */
+.intro p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skill-card {
+    background: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.skill-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill-card li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.skill-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+/* Experience Section */
+.experience-content {
+    display: grid;
+    gap: 30px;
+}
+
+/* Timeline Styles */
+.typical-day {
+    margin-bottom: 30px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 40px;
+    margin-top: 20px;
+}
+
+.timeline:before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--secondary-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--background-color);
+    border-radius: 8px;
+}
+
+.timeline-item:before {
+    content: "";
+    position: absolute;
+    left: -33px;
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    border: 3px solid var(--white);
+}
+
+.timeline-item .time {
+    font-weight: bold;
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Feelings Section */
+.feelings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.feeling-box {
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.feeling-box.positive {
+    background: #d5f4e6;
+    border-color: var(--success-color);
+}
+
+.feeling-box.negative {
+    background: #fadbd8;
+    border-color: var(--accent-color);
+}
+
+.feeling-box ul,
+.likes ul,
+.dislikes ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.feeling-box li,
+.likes li,
+.dislikes li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.positive li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+.negative li:before {
+    content: "✗";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Likes/Dislikes */
+.likes-dislikes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.likes,
+.dislikes {
+    padding: 20px;
+    border-radius: 8px;
+    background: var(--background-color);
+}
+
+.likes li:before {
+    content: "💚";
+    position: absolute;
+    left: 0;
+}
+
+.dislikes li:before {
+    content: "💔";
+    position: absolute;
+    left: 0;
+}
+
+/* Salary Section */
+.salary-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.salary-card {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.salary-card h3 {
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.salary-card .amount {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.salary-card .detail {
+    opacity: 0.9;
+    font-size: 0.9em;
+}
+
+.salary-note {
+    font-style: italic;
+    color: var(--light-gray);
+    text-align: center;
+}
+
+/* Evolution Section */
+.evolution-paths {
+    display: grid;
+    gap: 30px;
+}
+
+.path {
+    background: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.path-steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.step {
+    background: var(--white);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 2px solid var(--secondary-color);
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+}
+
+.arrow {
+    font-size: 2em;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.path ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.path li {
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+}
+
+.path li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Career Options Section */
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.job-card {
+    background: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 4px solid var(--secondary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.job-card h4 {
+    margin-bottom: 10px;
+}
+
+.job-card p {
+    color: #666;
+    font-size: 0.95em;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    .path-steps {
+        flex-direction: column;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header .subtitle {
+        font-size: 1em;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 1.3em;
+    }
+}
+
+/* Print Styles for A3 Version */
+@media print {
+    body {
+        background: white;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    section {
+        page-break-inside: avoid;
+        box-shadow: none;
+    }
+
+    header {
+        box-shadow: none;
+    }
+
+    .job-card {
+        page-break-inside: avoid;
+    }
+}
