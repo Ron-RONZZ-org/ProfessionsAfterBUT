@@ -42,11 +42,18 @@ Version compacte format A3 pour impression avec :
 
 ```
 ProfessionsAfterBUT/
-├── index.html          # Affiche complète en ligne
-├── a3-print.html       # Sommaire A3 pour impression
-├── styles.css          # Styles pour l'affiche complète
-├── a3-print.css        # Styles spécifiques A3
-├── script.js           # JavaScript (QR code, animations)
+├── public/             # Dossier de déploiement GitHub Pages
+│   ├── index.html      # Affiche complète en ligne
+│   ├── a3-print.html   # Sommaire A3 pour impression
+│   ├── styles.css      # Styles pour l'affiche complète
+│   ├── a3-print.css    # Styles spécifiques A3
+│   ├── script.js       # JavaScript (QR code, animations)
+│   ├── qrcode.min.js   # Bibliothèque QR code
+│   ├── InterviewQuestionList-AfterBUT.pdf  # PDF des questions
+│   └── CNAME           # Configuration domaine personnalisé
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml  # Workflow de déploiement
 └── README.md           # Documentation
 ```
 
@@ -73,6 +80,70 @@ Les deux versions sont optimisées pour :
 - QR code dynamique
 - Optimisation pour l'impression
 - 100% responsive
+
+## 🌐 Déploiement GitHub Pages
+
+Ce projet est configuré pour être déployé automatiquement sur GitHub Pages avec un domaine personnalisé.
+
+### URL de déploiement
+- **Domaine personnalisé** : https://c.ronzz.org
+- **URL GitHub Pages par défaut** : https://ron-ronzz-org.github.io/ProfessionsAfterBUT/
+
+### Configuration automatique
+
+Le déploiement est automatique via GitHub Actions. À chaque push sur la branche `main`, le workflow `.github/workflows/deploy-pages.yml` :
+1. Clone le dépôt
+2. Configure GitHub Pages
+3. Déploie le contenu du dossier `public/`
+
+### Actions requises par le propriétaire du dépôt
+
+#### 1. Activer GitHub Pages dans les paramètres du dépôt
+1. Aller dans **Settings** > **Pages**
+2. Dans **Source**, sélectionner **GitHub Actions**
+
+#### 2. Configurer le domaine personnalisé
+1. Dans **Settings** > **Pages** > **Custom domain**
+2. Entrer : `c.ronzz.org`
+3. Cocher **Enforce HTTPS** (une fois le DNS configuré)
+
+#### 3. Configurer les enregistrements DNS
+Ajouter les enregistrements suivants dans la configuration DNS de `ronzz.org` :
+
+**Pour un sous-domaine avec CNAME** :
+```
+Type: CNAME
+Nom: c
+Valeur: ron-ronzz-org.github.io
+TTL: 3600 (ou automatique)
+```
+
+**Ou avec des enregistrements A (alternatif)** :
+```
+Type: A
+Nom: c
+Valeur: 185.199.108.153
+```
+```
+Type: A
+Nom: c
+Valeur: 185.199.109.153
+```
+```
+Type: A
+Nom: c
+Valeur: 185.199.110.153
+```
+```
+Type: A
+Nom: c
+Valeur: 185.199.111.153
+```
+
+#### 4. Vérification
+- Attendre la propagation DNS (peut prendre jusqu'à 48h, généralement quelques minutes)
+- Vérifier que le site est accessible à https://c.ronzz.org
+- Le certificat SSL sera automatiquement généré par GitHub
 
 ## 📄 Licence
 
